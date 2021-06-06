@@ -2,6 +2,8 @@ package arrays;
 
 import java.util.Random;
 
+import javax.swing.JOptionPane;
+
 import org.jointheleague.graphical.robot.Robot;
 
 public class _01_RobotRace {
@@ -19,6 +21,7 @@ for (int i = 0; i < ro.length; i++) {
 	ro[i].setX(100+100*i);
 	ro[i].setY(500);
 	ro[i].setAngle(0);
+	ro[i].setSpeed(20);
 }
 		//4. make each robot start at the bottom of the screen, side by side, facing up
 
@@ -29,7 +32,11 @@ boolean robrace = true;
 while(robrace) {
 for (int i = 0; i < ro.length; i++) {
 	ro[i].move(ran.nextInt(50));
-	
+	if(ro[i].getY()<= 0) {
+	JOptionPane.showMessageDialog(null, i+"won");
+	robrace = false;
+	break;
+	}
 }
 }
 

@@ -71,7 +71,7 @@ public class _02_FindTheHiddenButton implements ActionListener{
 			e.printStackTrace();
 		}
 		//16. Set the text of the JButton located at hiddenButton to be blank.
-		b[hiddenButton].setText(null);
+		b[hiddenButton].setText("");
 	}
 
 	@Override
@@ -79,7 +79,12 @@ public class _02_FindTheHiddenButton implements ActionListener{
 		JButton buttonClicked = (JButton)e.getSource();
 		
 		//17. if the hiddenButton is clicked, tell the user that they win.
-		
+		if(buttonClicked == b[hiddenButton]) {
+		JOptionPane.showMessageDialog(null, "you win");	
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "try again");
+		}
 		//18. else tell them to try again
 	}
 }
